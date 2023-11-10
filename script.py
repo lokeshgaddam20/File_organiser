@@ -13,6 +13,7 @@ def sort_files_in_a_folder(mypath):
     file_type_variation_list=[]
     filetype_folder_dict={}
     print("Before")
+    print(files)
     for file in files:
         print(file)
         filetype=pathlib.Path(file).suffix
@@ -36,5 +37,5 @@ def sort_files_in_a_folder(mypath):
             shutil.move(src_path,dest_path)
         print(src_path + '>>>' + dest_path)
 if __name__=="__main__":
-    mypath='C:/Users/gadda/Downloads'
+    mypath="D:/dummy_test"
     sort_files_in_a_folder(mypath)
