@@ -8,6 +8,7 @@ def sort_files_in_a_folder(mypath):
     A function to sort the files in a download folder
     into their respective categories
     '''
+    print(stated)
     files = [f for f in listdir(mypath) if isfile(join(mypath, f))]
     file_type_variation_list=[]
     filetype_folder_dict={}
