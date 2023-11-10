@@ -3,21 +3,21 @@ from os.path import isfile, join
 import os
 import shutil
 import pathlib
-def sort_files_in_a_folder(mypath):
-    '''
-    A function to sort the files in a download folder
-    into their respective categories
-    '''
+
+def organize_files(mypath):
+    
     files = [f for f in listdir(mypath) if isfile(join(mypath, f))]
     file_type_variation_list=[]
     filetype_folder_dict={}
+    
     for file in files:
         filetype=pathlib.Path(file).suffix
-        # print(filetype)
+        
         if filetype not in file_type_variation_list:
             file_type_variation_list.append(filetype)
             new_folder_name=mypath+'/'+ filetype + '_folder'
             filetype_folder_dict[str(filetype)]=str(new_folder_name)
+            
             if os.path.isdir(new_folder_name)==True: #folder exists
                 continue
             else:
@@ -33,4 +33,4 @@ def sort_files_in_a_folder(mypath):
             print(src_path + '>>>' + dest_path)
 if __name__=="__main__":
     mypath="D:/dummy_test"
-    sort_files_in_a_folder(mypath)
+    organize_files(mypath)
