@@ -13,10 +13,9 @@ def sort_files_in_a_folder(mypath):
     file_type_variation_list=[]
     filetype_folder_dict={}
     print("Before")
-    print(files)
     for file in files:
-        print(file)
         filetype=pathlib.Path(file).suffix
+        print(filetype)
         if filetype not in file_type_variation_list:
             print("if")
             file_type_variation_list.append(filetype)
